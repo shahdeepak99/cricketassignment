@@ -46,13 +46,13 @@
         <ul>
             <!-- MAIN MENU -->
             <li>
-                <a href="{{url('/')}}" class="menu-lef-act"><img src="{{ asset('images/icon/f7.png')}}" alt=""> Teams</a>
+                <a href="{{route('teams')}}" class="{{ request()->routeIs('teams') ?'menu-lef-act':'' }}"><img src="{{ asset('images/icon/f7.png')}}" alt=""> Teams</a>
             </li>
             <li>
-                <a href="{{ url('/matches') }}"><img src="{{ asset('images/icon/c6.png')}}" alt=""> Matches</a>
+                <a href="{{ route('matches') }}" class="{{ request()->routeIs('matches') ?'menu-lef-act':'' }}"><img src="{{ asset('images/icon/c6.png')}}" alt=""> Matches</a>
             </li>
             <li>
-                <a href="{{ url('/points') }}"><img src="{{ asset('images/icon/c3.png')}}" alt=""> Points Table</a>
+                <a href="{{ route('points') }}" class="{{ request()->routeIs('points') ?'menu-lef-act':'' }}"><img src="{{ asset('images/icon/c3.png')}}" alt=""> Points Table</a>
             </li>
         </ul>
     </div>
@@ -73,7 +73,7 @@
         <!-- TOP CONTACT INFO -->
         <div class="i-head-left i-head-com col-md-6">
             <ul>
-                <li><a href="#">phone: +9971801865</a>
+                <li><a href="#">phone: +91-9971801865</a>
                 </li>
                 <li><a href="#">Email: shahdeepak88@gmail.com</a>
                 </li>

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','HomeController@index');
-Route::get('/squad/{id}','HomeController@show');
-Route::get('/matches/','MatchController@index');
-Route::get('/points/','PointController@index');
+Route::get('/','HomeController@index')->name('teams');
+Route::get('squad/{id}','HomeController@show')->name('team.show');
+Route::get('matches','MatchController@index')->name('matches');
+Route::get('points','PointController@index')->name('points');

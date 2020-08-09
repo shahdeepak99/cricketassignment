@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Team;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -12,8 +11,9 @@ class HomeController extends Controller
         return view('homepage')->with(compact('teams'));
     }
 
-    public function show(Request $request){
-        $squad = Team::with('users')->find($request->id);
+    public function show($id){
+        $id = base64_decode($id);
+        $squad = Team::with('users')->findOrFail($id);
         return view('squad')->with(compact('squad'));
     }
 }

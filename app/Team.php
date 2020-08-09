@@ -10,7 +10,13 @@ class Team extends Model
         return $this->hasMany(User::class);
     }
 
-    public function matches(){
-        return $this->hasMany(Match::class);
+    public function match_as_team_1(){
+        return $this->hasMany(Match::class,'team1','id');
+    }
+    public function match_as_team_2(){
+        return $this->hasMany(Match::class,'team2','id');
+    }
+    public function match_as_winner(){
+        return $this->hasMany(Match::class,'winner_id','id');
     }
 }

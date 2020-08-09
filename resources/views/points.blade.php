@@ -9,25 +9,27 @@
                         <div class="ev-po-title pag-cri-inn-combg">
                             <h3>Points Table</h3>
                         </div>
-                        @if(!empty($allpoints) && count($allpoints) > 0)
+                        @if(!empty($result) && $result->count() > 0)
                             <table class="myTable">
                                 <tbody>
                                 <tr>
                                     <th>TEAMS</th>
+                                    <th>Total</th>
                                     <th>W</th>
                                     <th>L</th>
                                     <th>PTS</th>
                                 </tr>
-                                @foreach($allpoints as $allpoint)
+                                @foreach($result as $team)
                                     <tr>
-                                        <td><img src="{{ $allpoint['logo'] }}" alt="" style="border-radius: 25px;">
+                                        <td><img src="{{ $team['logo'] }}" alt="" style="border-radius: 25px;">
                                             <div class="h-tm-ra">
-                                                <h4>{{ $allpoint['name'] }}</h4><span>{{ $allpoint['club'] }}</span>
+                                                <h4>{{ $team['name'] }}</h4><span>{{ $team['club'] }}</span>
                                             </div>
                                         </td>
-                                        <td>{{ $allpoint['wins'] }}</td>
-                                        <td>{{ $allpoint['loses'] }}</td>
-                                        <td>{{ $allpoint['points'] }}</td>
+                                        <td>{{ $team['total'] }}</td>
+                                        <td>{{ $team['wins'] }}</td>
+                                        <td>{{ $team['loses'] }}</td>
+                                        <td>{{ $team['points'] }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

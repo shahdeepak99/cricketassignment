@@ -23,7 +23,7 @@
                                         <h4>{{ $team->name }}</h4><span>{{ $team->club }}</span>
                                     </div>
                                 </td>
-                                <td><a href="{{ url('/squad', $team->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                                <td><a href="{{ route('team.show', base64_encode($team->id)) }}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
                             </tr>
                             @endforeach
                             </tbody>
